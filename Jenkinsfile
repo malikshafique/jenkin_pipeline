@@ -6,6 +6,12 @@ pipeline
   }
   stages
   {
+    stage('Checkout') {
+            steps {
+                // Checkout the source code from your Git repository
+                git 'https://github.com/malikshafique/jenkin_pipeline.git'
+            }
+        }
     stage("build")
     {
       steps{
