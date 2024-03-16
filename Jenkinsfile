@@ -27,6 +27,10 @@ pipeline
         echo("deploy stage")
       }
     }
+    stage('Archive') {
+    bat 'powershell -Command "& {Compress-Archive -Path dist -DestinationPath dist.tar.gz}"'
+    archive 'dist.tar.gz'
+}
   
     
   }
