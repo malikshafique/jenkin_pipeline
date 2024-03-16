@@ -12,7 +12,7 @@ pipeline
       steps{
         echo("building stage version ${NEW_VERSION}")
         bat 'npm install'
-        bat 'npm run build -- --prod'
+        bat 'ng build --configuration production'
       }
     }
     stage("test")
