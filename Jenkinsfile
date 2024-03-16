@@ -31,8 +31,8 @@ pipeline
     {
       steps{
  echo 'archiving....'
-    //bat 'powershell -Command "& {Compress-Archive -Path dist -DestinationPath dist.tar.gz}"'
-    //archive 'dist.tar.gz'
+    bat 'powershell -Command "& {Compress-Archive -Path dist -DestinationPath dist.tar.zip}"'
+    archive 'dist.tar.zip'
       }
     }
   }
