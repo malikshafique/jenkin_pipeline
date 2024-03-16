@@ -27,12 +27,14 @@ pipeline
         echo("deploy stage")
       }
     }
-    stage('Archive') {
-    bat 'powershell -Command "& {Compress-Archive -Path dist -DestinationPath dist.tar.gz}"'
-    archive 'dist.tar.gz'
-}
-  
-    
+    stage('Archive') 
+    {
+      steps{
+ echo 'archiving....'
+    //bat 'powershell -Command "& {Compress-Archive -Path dist -DestinationPath dist.tar.gz}"'
+    //archive 'dist.tar.gz'
+      }
+    }
   }
   post {
         success {
