@@ -1,6 +1,12 @@
 version: '3.4'
+
 services:
-  web:
-    build: .
+  demoproject:
+    image: demoproject
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
     ports:
       - 5160:5160
