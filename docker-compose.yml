@@ -1,6 +1,6 @@
 version: '3.4'
 services:
   web:
-    image: angular-jp-app
+    build: .
     ports:
       - 5160:5160
