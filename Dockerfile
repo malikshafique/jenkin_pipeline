@@ -15,6 +15,9 @@ RUN npm install --only=production --silent
 # Install Angular CLI as a development dependency
 RUN npm install --save-dev @angular/cli
 
+# Add Angular CLI bin directory to PATH
+ENV PATH="/usr/src/app/node_modules/.bin:${PATH}"
+
 # Copy the rest of the application code
 COPY . .
 
