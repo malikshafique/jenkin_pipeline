@@ -9,6 +9,10 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json (if exists)
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 
+# Remove existing Angular CLI installation
+RUN npm uninstall -g @angular/cli && \
+    rm -rf /usr/src/app/node_modules/@angular
+
 # Install project dependencies
 RUN npm install --only=production --silent
 
